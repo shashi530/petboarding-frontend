@@ -8,7 +8,9 @@ export default function Routers() {
     <div>
         <Navbar />
         <Routes>
-            <Route />
+            <Route path={"/"} element={<Home />} />
+            {/* <Route path={"/listing/create"} element={<Create />} />
+            <Route path={"/:id"} element={<Detail />} /> */}
         </Routes>
       <Home />
     </div>

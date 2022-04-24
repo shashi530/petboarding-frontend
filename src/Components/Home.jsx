@@ -8,13 +8,19 @@ export default function Home() {
   const [data,setData] = useState([]);
 
   useEffect(()=>{
-
+    getData()
   },[]);
 
-  async function getData (){
-    const data = await axios.get("mongodb://127.0.0.1:27017/petboard/lists");
-    console.log(data);
+const getData = async (data) => {
+  try{
+      const res = await axios.get("http://localhost:8080/lists/");
+      setData([...res.data]);
+      // console.log([...res.data]);
   }
+  catch(err){
+    console.log("Error",err);
+  }
+}
 
   return (
     <>
@@ -33,27 +39,23 @@ export default function Home() {
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
+            {
+            data.map(e =>{
+            return(
+              <Tr key={e.id}>
               <Td>
-              <Link href='/'>1</Link></Td>
-              <Td>Pet shop Athani</Td>
-              <Td>Athani</Td>
-              <Td>Near bust Stand Athani</Td>
-              <Td>200</Td>
-              <Td>150</Td>
-              <Td>yes</Td>
-              <Td>3.5</Td>
+              <Link href='/'>{e.id}</Link></Td>
+              <Td>{e.Name}</Td>
+              <Td>{e.City}</Td>
+              <Td>{e.Address}</Td>
+              <Td>{e.Capacity}</Td>
+              <Td>{e.Cost_per_day}</Td>
+              <Td>{e.Verified}</Td>
+              <Td>{e.Rating}</Td>
             </Tr>
-            <Tr>
-              <Td>1</Td>
-              <Td>Pet shop Athani</Td>
-              <Td>Athani</Td>
-              <Td>Near bust Stand Athani</Td>
-              <Td>200</Td>
-              <Td>150</Td>
-              <Td>yes</Td>
-              <Td>3.5</Td>
-            </Tr>
+              )
+              })
+            }
           </Tbody>
         </Table>
       </Box>
