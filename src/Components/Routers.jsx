@@ -3,6 +3,7 @@ import Home from './Home'
 import Navbar from './Navbar'
 import {Route, Routes} from 'react-router-dom';
 import Create from './Create';
+import Detail from './Detail';
 export default function Routers() {
   return (
     <div>
@@ -10,9 +11,8 @@ export default function Routers() {
         <Routes>
             <Route path={"/"} element={<Home />} />
             <Route path={"/listing/create"} element={<Create />} />
-            {/* <Route path={"/:id"} element={<Detail />} /> */}
+            <Route path={"/listing/:id"} element={<Detail />} />
         </Routes>
-      <Home />
     </div>
   )
 }

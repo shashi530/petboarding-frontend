@@ -17,16 +17,7 @@ export default function Create() {
       Rating: ""
   }
 
-  const [data,setData] = useState({
-  id : "",
-  Name : "",
-  City :"",
-  address:"",
-  Capacity:"",
-  Cost_per_day:"",
-  Verified:"",
-  Rating: ""}
-  );
+  const [data,setData] = useState(initValue);
 
   const handleChange = (e) =>{
     console.log(e);
@@ -70,22 +61,6 @@ export default function Create() {
     const res = await response.json();
     console.log(res)
   }
-  
-// .then((res)=>res.json()).catch((e) => console.log(e.message));
-
-  // console.log("submited")
-  // axios({
-  //     method: 'post',
-  //     url: 'http://localhost:8080/lists/',
-  //     data: e,
-  //     // data: qs.stringify(data),
-  // })
-  // .then(function (response) {
-  //     console.log(response);
-  // })
-  // .catch(function (error) {
-  //     console.log(error);
-  // });
 
 
   return (
