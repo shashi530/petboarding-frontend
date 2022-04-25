@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Image, Flex} from '@chakra-ui/react'
+import { Box, Image, Flex, Heading} from '@chakra-ui/react'
 
 export default function Detail() {
   return (
@@ -9,7 +9,13 @@ export default function Detail() {
             <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
         </Box>
         <Box padding="10px">
+        <Flex direction="column">
+            <Heading as='h2' size='lg'>
+                Shop Name
+            </Heading>
             
+
+        </Flex>
         </Box>
         </Flex>
     </>
