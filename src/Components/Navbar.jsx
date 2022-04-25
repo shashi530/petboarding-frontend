@@ -3,7 +3,7 @@ import {
     Box,
     Flex,
     Link
-  } from '@chakra-ui/react';
+  } from '@chakra-ui/react';  
 
 
 export default function Navbar() {
