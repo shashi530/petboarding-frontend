@@ -42,7 +42,7 @@ const getData = async (data) => {
             return(
               <Tr key={e.id}>
               <Td>
-              <Link href={`/listing/${e.id}`}>{e.id}</Link></Td>
+              <Link href={`/listing/${e._id}`}>{e.id}</Link></Td>
               <Td>{e.Name}</Td>
               <Td>{e.City}</Td>
               <Td>{e.Address}</Td>
